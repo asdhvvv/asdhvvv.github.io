@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hello World, asdhvvv">
+    <meta name="keywords" content="LeetCode每日一题(01), asdhvvv">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -27,7 +27,7 @@
 </script>
 
 
-    <title>Hello World | asdhvvv</title>
+    <title>LeetCode每日一题(01) | asdhvvv</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -319,12 +319,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hello World</h1>
+                    <h1 class="description center-align post-title">LeetCode每日一题(01)</h1>
                 </div>
             </div>
         </div>
@@ -439,21 +439,16 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
-                    
-                </div>
-                <div class="col s5 right-align">
-                    
-                    <div class="post-cate">
-                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                    <div class="article-tag">
                         
-                            <a href="/categories/uncategorized/" class="post-category">
-                                uncategorized
+                            <a href="/tags/LeetCode-DP%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">LeetCode DP算法</span>
                             </a>
                         
                     </div>
+                    
+                </div>
+                <div class="col s5 right-align">
                     
                 </div>
             </div>
@@ -462,7 +457,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-07-09
+                    2020-07-10
                 </div>
                 
 
@@ -478,15 +473,71 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre><code class="bash">$ hexo new &quot;My New Post&quot;</code></pre>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre><code class="bash">$ hexo server</code></pre>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre><code class="bash">$ hexo generate</code></pre>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><pre><code class="bash">$ hexo deploy</code></pre>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+                <h1 id="LeetCode"><a href="#LeetCode" class="headerlink" title="LeetCode"></a>LeetCode</h1><h3 id="最佳买卖股票时机含冷冻期"><a href="#最佳买卖股票时机含冷冻期" class="headerlink" title="最佳买卖股票时机含冷冻期"></a>最佳买卖股票时机含冷冻期</h3><p>给定一个整数数组，其中第 i 个元素代表了第 i 天的股票价格 。</p>
+<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>
+<ul>
+<li>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</li>
+<li>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。</li>
+</ul>
+<pre><code>输入: [1,2,3,0,2]
+输出: 3 
+解释: 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]</code></pre><h3 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h3><p>买入是负收益，卖出是正收益。初入股市，第一笔交易一定是负收益。但是可以获得卖的机会从而获得正收益。也就是尽量降低负收益，提高正收益。最后保证收益最大化。——动态规划算法。</p>
+<p>  设置一个二维数组 f[prices.length] [2] ，第二维度 2 分为 三个状态 0，1，2 </p>
+<p>我们目前持有一支股票，对应的「累计最大收益」记为 f[i][0]；</p>
+<p>我们目前不持有任何股票，并且处于冷冻期中，对应的「累计最大收益」记为 f[i][1]；</p>
+<p>我们目前不持有任何股票，并且不处于冷冻期中，对应的「累计最大收益」记为 f[i][2]。</p>
+<p>这里的「处于冷冻期」指的是在第 i 天结束之后的状态。也就是说：如果第 i 天结束之后处于冷冻期，那么第 i+1 天无法买入股票。</p>
+<p>如何进行状态转移呢？在第 i 天时，我们可以在不违反规则的前提下进行「买入」或者「卖出」操作，此时第 i 天的状态会从第 i-1 天的状态转移而来；我们也可以不进行任何操作，此时第 i 天的状态就等同于第 i-1 天的状态。那么我们分别对这三种状态进行分析：</p>
+<p>对于 f[i] [0]，我们目前持有的这一支股票可以是在第 i-1 天就已经持有的，对应的状态为 f[i-1] [0]；或者是第 ii 天买入的，那么第 i-1 天就不能持有股票并且不处于冷冻期中，对应的状态为 f[i-1] [2] 加上买入股票的负收益 {\it prices}[i]prices[i]。因此状态转移方程为：</p>
+<pre><code>f[i][0]=max(f[i−1][0],f[i−1][2]−prices[i]);</code></pre><p>对于 f[i] [1]   f[i] [1]，我们在第 ii 天结束之后处于冷冻期的原因是在当天卖出了股票，那么说明在第 i-1 天时我们必须持有一支股票，对应的状态为 f[i-1] [0] 加上卖出股票的正收益  prices[i]。因此状态转移方程为：</p>
+<pre><code>f[i][1]=f[i−1][0]+prices[i]</code></pre><p>对于 f[i] [2]，我们在第 i 天结束之后不持有任何股票并且不处于冷冻期，说明当天没有进行任何操作，即第 i-1i−1 天时不持有任何股票：如果处于冷冻期，对应的状态为 f[i-1] [1]；如果不处于冷冻期，对应的状态为 f[i-1] [2]。因此状态转移方程为：</p>
+<pre><code>f[i][2]=max(f[i−1][1],f[i−1][2])</code></pre><p>这样我们就得到了所有的状态转移方程。如果一共有 n 天，那么最终的答案即为：</p>
+<pre><code>max(f[n−1][0],f[n−1][1],f[n−1][2])</code></pre><p>注意到如果在最后一天（第 n-1 天）结束之后，手上仍然持有股票，那么显然是没有任何意义的。因此更加精确地，最终的答案实际上是 f[n-1] [1] 和 f[n-1] [2] 中的较大值，即：</p>
+<pre><code>max(f[n−1][1],f[n−1][2])</code></pre><pre><code class="java">class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int n = prices.length;
+        // f[i][0]: 手上持有股票的最大收益
+        // f[i][1]: 手上不持有股票，并且处于冷冻期中的累计最大收益
+        // f[i][2]: 手上不持有股票，并且不在冷冻期中的累计最大收益
+        int[][] f = new int[n][3];
+        f[0][0] = -prices[0];
+        for (int i = 1; i &lt; n; ++i) {
+            f[i][0] = Math.max(f[i - 1][0], f[i - 1][2] - prices[i]);
+            f[i][1] = f[i - 1][0] + prices[i];
+            f[i][2] = Math.max(f[i - 1][1], f[i - 1][2]);
+        }
+        return Math.max(f[n - 1][1], f[n - 1][2]);
+    }
+}</code></pre>
+<h3 id="空间优化"><a href="#空间优化" class="headerlink" title="空间优化"></a>空间优化</h3><p>注意到上面的状态转移方程中，f[i] [..] 只与 f[i-1] [..] 有关，而与 f[i-2] [..] 及之前的所有状态都无关，因此我们不必存储这些无关的状态。也就是说，我们只需要将 f[i-1] [0]，f[i-1] [1]，f[i-1] [2] 存放在三个变量中，通过它们计算出 f[i] [0]，f[i] [1]，f[i] [2] 并存回对应的变量，以便于第 i+1 天的状态转移即可。</p>
+<pre><code class="java">class Solution {
+    public int maxProfit(int[] prices) {
+        if (prices.length == 0) {
+            return 0;
+        }
+
+        int n = prices.length;
+        int f0 = -prices[0];
+        int f1 = 0;
+        int f2 = 0;
+        for (int i = 1; i &lt; n; ++i) {
+            int newf0 = Math.max(f0, f2 - prices[i]);
+            int newf1 = f0 + prices[i];
+            int newf2 = Math.max(f1, f2);
+            f0 = newf0;
+            f1 = newf1;
+            f2 = newf2;
+        }
+
+        return Math.max(f1, f2);
+    }
+}</code></pre>
+<h3 id="复杂度分析"><a href="#复杂度分析" class="headerlink" title="复杂度分析"></a>复杂度分析</h3><p>时间复杂度：O(n)，其中 n 为数组 prices 的长度。</p>
+<p>空间复杂度：O(n)。我们需要 3n 的空间存储动态规划中的所有状态，对应的空间复杂度为 O(n)。如果使用空间优化，空间复杂度可以优化至 O(1)。</p>
 
             </div>
             <hr/>
@@ -512,7 +563,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://asdhvvv.github.io/2020/070916107.html">http://asdhvvv.github.io/2020/070916107.html</a>
+                    <a href="http://asdhvvv.github.io/2020/0710undefined.html">http://asdhvvv.github.io/2020/0710undefined.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -549,7 +600,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/LeetCode-DP%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">LeetCode DP算法</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -715,9 +770,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/0710undefined.html">
                     <div class="card-image">
@@ -738,9 +794,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-07-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-07-10
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -749,6 +805,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -764,7 +821,7 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="far fa-dot-circle"></i>
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
                 <a href="/2020/070916107.html">
@@ -798,7 +855,6 @@
                         </span>
                     </div>
                 </div>
-
                 
             </div>
         </div>
