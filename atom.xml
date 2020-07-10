@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>asdhvvv</title>
   
-  
+  <subtitle>李白</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://asdhvvv.github.io/"/>
-  <updated>2020-07-09T13:18:40.936Z</updated>
+  <updated>2020-07-10T02:15:37.490Z</updated>
   <id>http://asdhvvv.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://asdhvvv.github.io/2020/070916107.html"/>
     <id>http://asdhvvv.github.io/2020/070916107.html</id>
     <published>2020-07-09T13:18:40.936Z</published>
-    <updated>2020-07-09T13:18:40.936Z</updated>
+    <updated>2020-07-10T02:15:37.490Z</updated>
     
     <summary type="html">
     
@@ -35,6 +35,8 @@
     
     </summary>
     
+    
+      <category term="uncategorized" scheme="http://asdhvvv.github.io/categories/uncategorized/"/>
     
     
   </entry>
